@@ -4,9 +4,6 @@ import styles from './style.module.css';
 type IMainProps = {
   type?: "submit" | "reset" | "button";
   style?: "ghost" | "half" | "secondary" | "solid";
-  // half?: boolean;
-  // secondary?: boolean;
-  // solid?: boolean;
   disabled?: boolean;
   hue?: number;
   class?: string;
@@ -31,7 +28,7 @@ const Main: ParentComponent<IMainProps> = (props) => {
       style={`${props.hue != null ? `--hue: ${props.hue};` : ""}`}
       onClick={props.onClick}
     >
-      <div class="flex items-center justify-center flex-1 gap-m0">
+      <div class="flex flex-row items-center justify-center flex-1 gap-s++">
         {props.children}
       </div>
     </button>
