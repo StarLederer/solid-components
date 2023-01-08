@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- .
+- `primitives/Button/Link`. A Link version of Button based on `<a>`.
+- `primitives/Button/Base`. Tag-agnostic version of Button with an `as` parameter.
 
 ### Fixed
 

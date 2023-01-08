@@ -2,9 +2,7 @@ import { ParentComponent } from "solid-js";
 import Base, { IBaseProps } from "./Base";
 
 type IMainProps = IBaseProps & {
-  type?: "submit" | "reset" | "button";
-  disabled?: boolean;
-  onClick?: () => void;
+  href: string;
 };
 
 const Main: ParentComponent<IMainProps> = (props) => {
@@ -14,15 +12,13 @@ const Main: ParentComponent<IMainProps> = (props) => {
       style={props.style}
       hue={props.hue}
       as={(baseProps) => (
-        <button
+        <a
           class={baseProps.class}
-          style={baseProps.style}
-          type={props.type ?? "button"}
-          disabled={props.disabled}
-          onClick={props.onClick}
+          style={`text-decoration: none; ${baseProps.style}`}
+          href={props.href}
         >
           {baseProps.children}
-        </button>
+        </a>
       )}
     >
       {props.children}
