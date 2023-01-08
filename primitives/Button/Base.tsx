@@ -1,8 +1,10 @@
 import { ParentComponent } from "solid-js";
 import styles from './style.module.css';
 
+type IButtonStyle = "ghost" | "half" | "secondary" | "solid";
+
 type IBaseProps = {
-  style?: "ghost" | "half" | "secondary" | "solid";
+  style?: IButtonStyle;
   hue?: number;
   class?: string;
 };
@@ -39,4 +41,4 @@ const Main: ParentComponent<IMainProps> = (props) => {
 };
 
 export default Main;
-export type { IBaseProps };
+export type { IButtonStyle, IBaseProps };

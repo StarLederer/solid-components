@@ -31,3 +31,4 @@ const Main: ParentComponent<IMainProps> = (props) => {
 };
 
 export default Main;
+export * from "./Base";
