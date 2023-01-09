@@ -2,9 +2,9 @@
   @apply
     relative
     flex-1
-    height-m--
+    height-m.2
     bg-int4
-    round-m0
+    round-s
     transition;
 
   overflow: hidden;
@@ -26,6 +26,7 @@
     height-full
     bg-int
     transition;
+
   transition-property: background;
 }
 

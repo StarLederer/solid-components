@@ -22,7 +22,7 @@ const Main: ParentComponent<IMainProps> = (props) => {
   return (
     <As
       class={[
-        props.class ?? "round-m0 pd-m0",
+        props.class ?? "round-s pd-s",
         styles.button,
         (() => {
           if (props.style === "solid") return styles.isSolid;
@@ -33,7 +33,7 @@ const Main: ParentComponent<IMainProps> = (props) => {
       ].join(" ")}
       style={`${props.hue != null ? `--hue: ${props.hue};` : ""}`}
     >
-      <div class="flex flex-row items-center justify-center flex-1 gap-s++">
+      <div class="flex flex-row items-center justify-center flex-1 gap-s.8">
         {props.children}
       </div>
     </As>

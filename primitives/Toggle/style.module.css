@@ -8,15 +8,15 @@
     border-color-int3
     transition
     transition-all
-    round-m0
-    pd-s--;
+    round-s
+    pd-s.2;
 
   &:hover {
     @apply highlight;
   }
 
   &:active {
-    @apply pd-s- highlight+;
+    @apply pd-s.4 highlight+;
   }
 
   & .text {
@@ -31,7 +31,7 @@
     inset-inline-start: 0;
     transition: inherit;
 
-    @apply round-m0 bg-int2;
+    @apply round-s bg-int2;
   }
 
   &:is(.on) {
