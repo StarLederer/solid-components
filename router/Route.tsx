@@ -1,17 +1,16 @@
-import { createEffect, createSignal, ParentComponent } from "solid-js";
+import { createEffect, createSignal, ParentComponent, Show } from "solid-js";
 import router from "./index";
 
 type IRouteProps = {
   path: string;
   strict?: boolean;
-  class?: string;
   onOpen?: () => void;
   onClose?: () => void;
 };
 
 const Route: ParentComponent<IRouteProps> = (props) => {
   const { route } = router;
-  const baseClasses = props.class ?? "absolute inset-0 flex flex-col items-stretch";
+  const baseClasses = "absolute inset-0 overflow-auto";
   const classes = () => (
     baseClasses
     + (routeIn() ? " animate-in" : "")
@@ -27,7 +26,7 @@ const Route: ParentComponent<IRouteProps> = (props) => {
 
   // State
 
-  let timeout = setTimeout(()=>{}, 0);
+  let timeout = setTimeout(() => { }, 0);
 
   const isOpen = () => {
     let open = false;
@@ -60,13 +59,11 @@ const Route: ParentComponent<IRouteProps> = (props) => {
   // Render
 
   return (
-    <>
-      {hasDom() && (
-        <section class={classes()}>
-          {props.children}
-        </section>
-      )}
-    </>
+    <Show when={hasDom()}>
+      <section class={classes()}>
+        {props.children}
+      </section>
+    </Show>
   );
 };
 
