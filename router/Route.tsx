@@ -4,15 +4,17 @@ import router from "./index";
 type IRouteProps = {
   path: string;
   strict?: boolean;
+  scroll?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
 };
 
 const Route: ParentComponent<IRouteProps> = (props) => {
   const { route } = router;
-  const baseClasses = "absolute inset-0 overflow-auto";
+  const baseClasses = "absolute inset-0";
   const classes = () => (
     baseClasses
+    + (props.scroll ? " overflow-auto" : "")
     + (routeIn() ? " animate-in" : "")
     + (routeOut() ? " animate-out" : "")
   );
