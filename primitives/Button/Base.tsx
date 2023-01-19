@@ -22,7 +22,7 @@ const Main: ParentComponent<IMainProps> = (props) => {
   return (
     <As
       class={[
-        props.class ?? "round-s pd-s",
+        props.class ?? "rounded-s pd-s",
         styles.button,
         (() => {
           if (props.style === "solid") return styles.isSolid;
