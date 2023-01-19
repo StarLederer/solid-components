@@ -8,7 +8,7 @@
     border-color-int3
     transition
     transition-all
-    round-s
+    rounded-s
     pd-s.2;
 
   &:hover {
@@ -31,7 +31,7 @@
     inset-inline-start: 0;
     transition: inherit;
 
-    @apply round-s bg-int2;
+    @apply rounded-s bg-int2;
   }
 
   &:is(.on) {

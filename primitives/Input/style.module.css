@@ -1,6 +1,6 @@
 .input {
   @apply width-full
-    round-s
+    rounded-s
     border
     border-color-int3
     transition
