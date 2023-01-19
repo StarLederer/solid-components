@@ -1,5 +1,5 @@
 .input {
-  @apply width-full
+  @apply size-i-full
     rounded-s
     border
     border-color-int3
@@ -17,7 +17,7 @@
   }
 
   & input {
-    @apply min-width-0
+    @apply min-size-i-0
       pd-s
       pd-bs-m.2
       text-fg-0

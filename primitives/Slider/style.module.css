@@ -2,7 +2,7 @@
   @apply
     relative
     flex-1
-    height-m.2
+    size-b-m.2
     bg-int4
     rounded-s
     transition;
@@ -23,7 +23,7 @@
 .fill {
   @apply
     absolute
-    height-full
+    size-b-full
     bg-int
     transition;
 
