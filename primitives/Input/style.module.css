@@ -18,8 +18,8 @@
 
   & input {
     @apply min-size-i-0
-      pd-s
-      pd-bs-m.2
+      p-s
+      p-bs-m.2
       text-fg-0
       flex-1;
     outline: none;

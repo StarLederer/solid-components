@@ -9,14 +9,14 @@
     transition
     transition-all
     rounded-s
-    pd-s.2;
+    p-s.2;
 
   &:hover {
     @apply highlight;
   }
 
   &:active {
-    @apply pd-s.4 highlight+;
+    @apply p-s.4 highlight+;
   }
 
   & .text {
