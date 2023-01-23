@@ -3,7 +3,7 @@
     items-stretch
     int-text
     transition
-    bg-none
+    bg-transparent
     text-int
     border-none
     font-semibold;
