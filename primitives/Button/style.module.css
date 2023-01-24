@@ -17,7 +17,7 @@
 
     &:hover,
     &:active {
-      @apply highlight;
+      @apply ease-out highlight;
     }
 
     &:active {
