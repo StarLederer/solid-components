@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Target version of `unocss-preset` to v2.0.0-beta.
+- Target version of Windblade to v2.0.0-beta.
 
 ### Removed
 

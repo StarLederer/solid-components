@@ -1,7 +1,5 @@
 import { ParentComponent, Signal } from "solid-js";
 import styles from './style.module.css';
-import { theme } from "~/../unocss-preset"
-import { style } from "solid-js/web";
 
 type IMainProps = {
   min?: number;

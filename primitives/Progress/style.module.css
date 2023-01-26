@@ -1,5 +1,5 @@
 .progress {
-  /* TODO: replace --fg with @apply when unocss-preset adds support */
+  /* TODO: replace --fg with @apply when Windblade adds support */
   border: 0.2rem solid var(--fg2);
   border-top-color: var(--fg1);
   border-radius: 50%;
