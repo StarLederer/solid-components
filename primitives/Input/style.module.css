@@ -20,7 +20,7 @@
     @apply min-size-i-0
       p-s
       p-bs-m.2
-      text-fg-0
+      text-fg-1
       flex-1;
     outline: none;
   }
@@ -28,7 +28,7 @@
 
 .label {
   @apply absolute
-    text-fg-2
+    text-fg-3
     text-s.8 a;
   top: 0;
   left: 1rem;
