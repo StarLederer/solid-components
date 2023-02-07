@@ -1,11 +1,16 @@
 .progress {
-  /* TODO: replace --fg with @apply when Windblade adds support */
-  border: 0.2rem solid var(--fg2);
-  border-top-color: var(--fg1);
   border-radius: 50%;
+  /* TODO: Remove --radius in favor of just setting size */
   width: calc(var(--radius) * 2);
   height: calc(var(--radius) * 2);
-  animation: spin 2s linear infinite;
+  animation: spin infinite;
+  @apply
+    border
+    border-s.2
+    border-color-fg-2
+    border-bs-color-fg-1
+    animation-duration-m
+    animation-ease;
 }
 
 @keyframes spin {
