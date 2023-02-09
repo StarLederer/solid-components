@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `scroll` prop to class to quickly enable scrolling.
+- .
 
 ### Fixed
 
@@ -17,11 +17,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Target version of Windblade to v2.0.0-beta.
+- .
 
 ### Removed
 
-- The `class` prop from `Rotue` because it encouraged user error.
+- .
+
+## 2.0.0-alpha - 2023-02-01
+
+### Added
+
+- `scroll` prop to class to quickly enable scrolling.
+
+### Fixed
+
+- `Route` now correctly figures out animation delay.
+
+### Changed
+
+- Target version of Windblade to v2.0.0-alpha.
+- Hard-coded animation classes of `Route` are now configurable.
 
 ## 1.1.0 - 2023-01-09
 
