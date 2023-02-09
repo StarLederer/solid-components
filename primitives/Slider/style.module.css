@@ -3,7 +3,7 @@
     relative
     flex-1
     size-b-m.2
-    bg-int4
+    bg-accent-4
     rounded-s
     transition;
 
@@ -24,7 +24,7 @@
   @apply
     absolute
     size-b-full
-    bg-int
+    bg-accent
     transition;
 
   transition-property: background;

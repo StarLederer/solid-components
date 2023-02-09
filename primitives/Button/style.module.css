@@ -4,7 +4,7 @@
     int-text
     transition
     bg-transparent
-    text-int
+    text-accent
     border-none
     font-semibold;
 
@@ -30,19 +30,19 @@
   &:not(:disabled) {
     &:hover,
     &:active {
-      @apply bg-int4;
+      @apply bg-accent-4;
     }
   }
 }
 
 .isHalf {
-  @apply bg-int4;
+  @apply bg-accent-4;
 }
 
 .isSecondary {
-  @apply bg-int2;
+  @apply bg-accent-2;
 }
 
 .isSolid {
-  @apply bg-int;
+  @apply bg-accent;
 }

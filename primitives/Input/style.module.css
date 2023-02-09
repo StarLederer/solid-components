@@ -2,7 +2,7 @@
   @apply size-i-full
     rounded-s
     border
-    border-color-int3
+    border-color-accent-3
     transition
     relative
     flex;
@@ -13,7 +13,7 @@
   }
 
   &:focus-within {
-    @apply border-color-int;
+    @apply border-color-accent;
   }
 
   & input {

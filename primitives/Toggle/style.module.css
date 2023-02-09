@@ -4,8 +4,8 @@
   border: solid 1px;
   cursor: pointer;
 
-  @apply bg-int3
-    border-color-int3
+  @apply bg-accent-3
+    border-color-accent-3
     transition
     transition-all
     rounded-s
@@ -31,14 +31,14 @@
     inset-inline-start: 0;
     transition: inherit;
 
-    @apply rounded-s bg-int2;
+    @apply rounded-s bg-accent-2;
   }
 
   &:is(.on) {
-    @apply border-color-int2;
+    @apply border-color-accent-2;
 
     & .toggle {
-      @apply bg-int;
+      @apply bg-accent;
       inset-inline-start: 50%;
     }
   }
