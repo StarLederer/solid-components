@@ -16,15 +16,13 @@ const Route: ParentComponent<RouteProps> = (props) => {
 
   // Determine whether this path is open.
 
-  const [isOpen, setIsOpen] = createSignal(false);
-
-  createEffect(() => {
+  const isOpen = () => {
     if (props.strict) {
-      setIsOpen(route().current === props.path);
+      return route().current === props.path;
     } else {
-      setIsOpen(route().current.startsWith(props.path));
+      return route().current.startsWith(props.path);
     }
-  });
+  };
 
   // Open & close callbacks.
   // Executes when open state changes but not when allbakcs change
