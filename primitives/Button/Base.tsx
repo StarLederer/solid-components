@@ -1,7 +1,7 @@
 import { ParentComponent } from "solid-js";
 import styles from './style.module.css';
 
-type IButtonStyle = "ghost" | "half" | "secondary" | "solid";
+type IButtonStyle = "none" | "ghost" | "half" | "secondary" | "solid";
 
 type IBaseProps = {
   style?: IButtonStyle;
@@ -25,6 +25,7 @@ const Main: ParentComponent<IMainProps> = (props) => {
         props.class ?? "rounded-s p-s",
         styles.button,
         (() => {
+          if (props.style === "none") return "";
           if (props.style === "solid") return styles.isSolid;
           if (props.style === "secondary") return styles.isSecondary;
           if (props.style === "half") return styles.isHalf;

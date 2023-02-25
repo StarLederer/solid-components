@@ -1,13 +1,4 @@
 .button {
-  @apply flex
-    items-stretch
-    int-text
-    transition
-    bg-transparent
-    text-accent
-    border-none
-    font-semibold;
-
   &:disabled {
     cursor: not-allowed;
   }
@@ -27,6 +18,15 @@
 }
 
 .isGhost {
+  @apply flex
+    items-stretch
+    int-text
+    transition
+    bg-transparent
+    text-accent
+    border-none
+    font-semibold;
+
   &:not(:disabled) {
     &:hover,
     &:active {
