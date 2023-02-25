@@ -43,6 +43,24 @@ const findFirstDifferent = (a: string, b: string) => {
   return [undefined, undefined];
 }
 
+export type Pa = string[];
+
+export const pathStartsWith = (self: Pa, other: Pa): boolean => {
+  if (self.length < other.length) return false;
+
+  for (let i = 0; i < other.length; ++i) {
+    if (self[i] !== other[i]) return false;
+  }
+
+  return true;
+};
+
+export const pathEquals = (self: Pa, other: Pa): boolean => {
+  if (self.length !== other.length) return false;
+
+  return pathStartsWith(self, other);
+};
+
 const createRouter = () => {
   const [route, setRoute] = createSignal<IRouteStore>({
     previous: "/",

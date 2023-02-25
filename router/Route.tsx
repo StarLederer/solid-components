@@ -1,5 +1,5 @@
 import { createEffect, createSignal, on, ParentComponent, Show } from "solid-js";
-import router from "./index";
+import router, { pathEquals, pathStartsWith } from "./index";
 
 export type RouteProps = {
   path: string;
@@ -18,9 +18,9 @@ const Route: ParentComponent<RouteProps> = (props) => {
 
   const isOpen = () => {
     if (props.strict) {
-      return route().current === props.path;
+      return pathEquals(route().current.split("/"), props.path.split("/"));
     } else {
-      return route().current.startsWith(props.path);
+      return pathStartsWith(route().current.split("/"), props.path.split("/"));
     }
   };
 
