@@ -1,40 +1,40 @@
 import { createSignal, createRoot } from "solid-js";
 
-type Path = string | undefined;
+export type Path = string[];
+
+type FirstDifferent = [string | undefined, string | undefined];
 
 type IRouteStore = {
-  previous: string;
-  current: string;
-  firstDifferent: Path[]; // fist path segments that is different between previous and current
+  previous: Path;
+  current: Path;
+  // Fist path segments that is different between previous and current
+  firstDifferent: FirstDifferent;
 };
 
-const resolve = (path: string) => {
-  let resolvedSegments: string[] = [];
+const resolve = (path: Path): Path => {
+  let resolvedPath: Path = [];
 
-  path.split("/").forEach((segment) => {
+  path.forEach((segment) => {
     if (segment === "..") {
-      resolvedSegments.pop();
+      resolvedPath.pop();
     } else {
-      resolvedSegments.push(segment);
+      resolvedPath.push(segment);
     }
   })
 
-  return `${resolvedSegments.join("/")}`;
+  return resolvedPath;
 }
 
-const findFirstDifferent = (a: string, b: string) => {
-  const c = a.split("/"); // a but split
-  const d = b.split("/"); // b but split
-
+const findFirstDifferent = (a: Path, b: Path): FirstDifferent => {
   // Yes, we do go outside one of the array bounds
   // It is very convenient that javascript gives us
   // undefined if we do so.
   // /a/b/undefined (undefined is first different)
   // /a/b/c/d (c is first differenc)
-  const maxLength = Math.max(c.length, d.length);
+  const maxLength = Math.max(a.length, b.length);
   for (let i = 0; i < maxLength; ++i) {
-    if (c[i] != d[i]) {
-      return [c[i], d[i]];
+    if (a[i] != b[i]) {
+      return [a[i], b[i]];
     }
   }
 
@@ -43,9 +43,7 @@ const findFirstDifferent = (a: string, b: string) => {
   return [undefined, undefined];
 }
 
-export type Pa = string[];
-
-export const pathStartsWith = (self: Pa, other: Pa): boolean => {
+export const pathStartsWith = (self: Path, other: Path): boolean => {
   if (self.length < other.length) return false;
 
   for (let i = 0; i < other.length; ++i) {
@@ -55,7 +53,7 @@ export const pathStartsWith = (self: Pa, other: Pa): boolean => {
   return true;
 };
 
-export const pathEquals = (self: Pa, other: Pa): boolean => {
+export const pathEquals = (self: Path, other: Path): boolean => {
   if (self.length !== other.length) return false;
 
   return pathStartsWith(self, other);
@@ -63,12 +61,12 @@ export const pathEquals = (self: Pa, other: Pa): boolean => {
 
 const createRouter = () => {
   const [route, setRoute] = createSignal<IRouteStore>({
-    previous: "/",
-    current: "/",
+    previous: [],
+    current: [],
     firstDifferent: [undefined, undefined],
   });
 
-  const navigate = (to: string) => {
+  const navigate = (to: Path) => {
     const previous = route().current;
     const current = resolve(to);
 
