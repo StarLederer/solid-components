@@ -34,9 +34,12 @@ const Main: ParentComponent<IMainProps> = (props) => {
       ].join(" ")}
       style={`${props.hue != null ? `--hue: ${props.hue};` : ""}`}
     >
-      <div class="flex flex-row items-center justify-center flex-1 gap-s.8">
-        {props.children}
-      </div>
+      {props.style === "none"
+        ? props.children
+        : <div class="flex flex-row items-center justify-center flex-1 gap-s.8">
+          {props.children}
+        </div>
+      }
     </As>
   );
 };
