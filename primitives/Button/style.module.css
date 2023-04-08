@@ -17,16 +17,21 @@
   }
 }
 
-.isGhost {
+.isGhost,
+.isHalf,
+.isSecondary,
+.isSolid {
   @apply flex
-    items-stretch
-    int-text
-    transition
-    bg-transparent
-    text-accent
-    border-none
-    font-semibold;
+  items-stretch
+  int-text
+  transition
+  bg-transparent
+  text-accent
+  border-none
+  font-semibold;
+}
 
+.isGhost {
   &:not(:disabled) {
     &:hover,
     &:active {
