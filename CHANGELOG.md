@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `none` style to Buttons.
+- `solid-router` module with utils for [solid-rotuer](https://github.com/solidjs/solid-router)
 
 ### Fixed
 
