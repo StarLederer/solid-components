@@ -9,7 +9,7 @@ const RematchDynamic: Component<{
   on?: (params: Params) => any
 }> = (props) => {
   const params = useParams()
-  const [page, setPage] = createSignal<JSXElement>()
+  const [page, setPage] = createSignal<JSXElement>(props.component({}))
 
   const paramSignal = () => props.on ? props.on(params) : Object.values(params)
 
